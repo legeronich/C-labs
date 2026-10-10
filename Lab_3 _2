@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введіть ціле число від 1 до 7: ";
+    cin >> n;
+
+    // Розподіл за рівнями навчання (наприклад: 1-4 — бакалавр, 5-6 — магістр, 7 — спеціаліст)
+    switch (n) {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+            cout << "Рівень навчання: Бакалавр\n";
+            break;
+        case 5:
+        case 6:
+            cout << "Рівень навчання: Магістр\n";
+            break;
+        case 7:
+            cout << "Рівень навчання: Спеціаліст\n";
+            break;
+        default:
+            cout << "Такого покоління не існує\n";
+            break;
+    }
+
+    return 0;
+}
