@@ -1,0 +1,23 @@
+//1
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    double a, b, c, d;
+    cout << "Введите четыре натуральных числа: ";
+    cin >> a >> b >> c >> d;
+
+    double maxNum = max({a, b, c, d});
+    double minNum = min({a, b, c, d});
+
+    double ratio = a / (maxNum + minNum);
+    double rootDiff = sqrt(a) - sqrt(minNum);
+
+    cout << "1) Отношение первого числа к сумме наибольшего и наименьшего: " << ratio << endl;
+    cout << "2) Разность квадратных корней первого и наименьшего чисел: " << rootDiff << endl;
+
+    return 0;
+}
+
