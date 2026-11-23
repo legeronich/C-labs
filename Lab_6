@@ -1,0 +1,58 @@
+//1
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите размер массива: ";
+    cin >> n;
+
+    double a[100];
+    cout << "Введите элементы массива: ";
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int count7 = 0;
+    cout << "Нечётные элементы: ";
+    for (int i = 0; i < n; i++) {
+        if (a[i] == (int)a[i] && (int)a[i] % 2 != 0) {
+            cout << a[i] << " ";
+        }
+        if (abs(a[i]) == 7) {
+            count7++;
+        }
+    }
+
+    cout << "\nМодуль числа 7 встречается раз: " << count7 << endl;
+    return 0;
+}
+
+//2
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите размер массива: ";
+    cin >> n;
+
+    double a[100];
+    cout << "Введите элементы массива: ";
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    double minEl = a[0];
+    for (int i = 1; i < n; i++) {
+        if (a[i] < minEl) {
+            minEl = a[i];
+        }
+    }
+
+    double sum = minEl + a[n - 1];
+    cout << "Сумма последнего и минимального элементов: " << sum << endl;
+    return 0;
+}
