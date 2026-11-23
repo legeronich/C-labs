@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m;
+    cout << "Введите количество строк и столбцов: ";
+    cin >> n >> m;
+
+    int a[50][50];
+    cout << "Введите элементы массива:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> a[i][j];
+        }
+    }
+
+    long long prod = 1;
+    bool found = false;
+
+    for (int i = 0; i < n; i++) {
+        int rowSum = 0;
+        bool hasPositive = false;
+
+        for (int j = 0; j < m; j++) {
+            rowSum += a[i][j];
+            if (a[i][j] > 0) {
+                hasPositive = true;
+            }
+        }
+
+        if (hasPositive) {
+            prod *= rowSum;
+            found = true;
+        }
+    }
+
+    if (found) {
+        cout << "Произведение сумм строк с положительными элементами: " << prod << endl;
+    } else {
+        cout << "Строк с положительными элементами нет." << endl;
+    }
+
+    return 0;
+}
