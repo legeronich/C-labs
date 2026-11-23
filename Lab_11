@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main() {
+    string s;
+    cout << "Введите строку: ";
+    getline(cin, s);
+
+    int currentLen = 0;
+    int maxLen = 0;
+
+    for (char ch : s) {
+        if (isdigit(static_cast<unsigned char>(ch))) {
+            currentLen++;
+            if (currentLen > maxLen) {
+                maxLen = currentLen;
+            }
+        } else {
+            currentLen = 0;
+        }
+    }
+
+    cout << "Максимальная длина серии из цифр: " << maxLen << endl;
+    return 0;
+}
