@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main() {
+    string s;
+    cout << "Введите строку: ";
+    getline(cin, s);
+
+    bool newWord = true;
+
+    for (size_t i = 0; i < s.length(); i++) {
+        unsigned char ch = static_cast<unsigned char>(s[i]);
+
+        if (isspace(ch)) {
+            newWord = true;
+        } else {
+            if (newWord) {
+                s[i] = static_cast<char>(toupper(ch));
+                newWord = false;
+            } else {
+                s[i] = static_cast<char>(tolower(ch));
+            }
+        }
+    }
+
+    cout << "Отредактированная строка: " << s << endl;
+    return 0;
+}
