@@ -1,0 +1,64 @@
+//1
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n, m;
+    cout << "Введіть кількість рядків і стовпців: ";
+    cin >> n >> m;
+
+    double a[50][50];
+    double sum = 0;
+
+    cout << "Введіть елементи масиву:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> a[i][j];
+            if (a[i][j] >= 0 && a[i][j] == (int)a[i][j]) {
+                int r = (int)sqrt(a[i][j]);
+                if (r * r == (int)a[i][j]) {
+                    sum += a[i][j];
+                }
+            }
+        }
+    }
+
+    cout << "Сума точних квадратів: " << sum << endl;
+    return 0;
+}
+
+//2
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m;
+    cout << "Введіть кількість рядків і стовпців: ";
+    cin >> n >> m;
+
+    int a[50][50];
+    cout << "Введіть елементи масиву:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> a[i][j];
+        }
+    }
+
+    int colsCount = 0;
+    for (int j = 0; j < m; j++) {
+        int neg = 0;
+        for (int i = 0; i < n; i++) {
+            if (a[i][j] < 0) {
+                neg++;
+            }
+        }
+        if (neg == 1) {
+            colsCount++;
+        }
+    }
+
+    cout << "Кількість стовпчиків з одним від'ємним елементом: " << colsCount << endl;
+    return 0;
+}
