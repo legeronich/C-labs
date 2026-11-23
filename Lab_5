@@ -1,0 +1,58 @@
+//1
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x, count = 0;
+    cout << "Введите целые числа (0 - конец ввода): ";
+    while (cin >> x && x != 0) {
+        if (x > 0 && x % 9 == 0) {
+            count++;
+        }
+    }
+    cout << "Количество натуральных чисел, кратных 9: " << count << endl;
+    return 0;
+}
+
+//2
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите натуральное число n (>= 6): ";
+    cin >> n;
+
+    double y = 0.0;
+    for (int k = 6; k <= n; k++) {
+        y += (3.0 + k) / k;
+    }
+
+    cout << "y = " << y << endl;
+    return 0;
+}
+
+//3
+#include <iostream>
+using namespace std;
+
+int main() {
+    int s = 200; // при необходимости можно изменить: cin >> s;
+    int plans = 0;
+
+    for (int a = 0; a <= s / 3; a++) {
+        for (int b = 0; b <= s / 4; b++) {
+            for (int c = 0; c <= s / 5; c++) {
+                if (3 * a + 4 * b + 5 * c == s) {
+                    cout << "По 3т: " << a
+                         << ", по 4т: " << b
+                         << ", по 5т: " << c << endl;
+                    plans++;
+                }
+            }
+        }
+    }
+
+    cout << "Всего планов: " << plans << endl;
+    return 0;
+}
