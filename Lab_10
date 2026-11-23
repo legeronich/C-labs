@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+const double PI = 3.14159265358979323846;
+
+double polygonArea(int n, double side) {
+    return (n * side * side) / (4.0 * tan(PI / n));
+}
+
+int main() {
+    for (int i = 1; i <= 7; i++) {
+        int n;
+        double a;
+        cout << "Многоугольник " << i << " — введите количество сторон (>= 3) и длину стороны: ";
+        cin >> n >> a;
+
+        if (n >= 3 && a > 0) {
+            cout << "Площадь: " << polygonArea(n, a) << endl;
+        } else {
+            cout << "Некорректные данные (нужно n >= 3 и сторона > 0)." << endl;
+        }
+    }
+
+    return 0;
+}
